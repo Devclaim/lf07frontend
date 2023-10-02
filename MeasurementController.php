@@ -4,11 +4,9 @@
         private $file;        
 
         public function __construct() {
-            // Connect to the database
             $this->conn = new mysqli("localhost", "arduino", "password123", "smart_garden");
             $this->file = __DIR__ . '/measurements.txt';
 
-            // Check the connection
             if ($this->conn->connect_error) {
                 die("Connection failed: " . $this->conn->connect_error);
             }
@@ -23,7 +21,6 @@
 
                 if(!$line) {break;}
 
-                // temp , humidity , waterLevel , luminosity
                 $values = preg_split("/\,/", $line);
                 $temperature = (int)$values[0];
                 $humidity = (int)$values[1];
