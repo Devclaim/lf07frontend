@@ -1,5 +1,4 @@
 <?php
-    echo "Smart Garden initiated."
 ?>
 
 <!DOCTYPE html>
@@ -15,17 +14,24 @@
         <script src="javascript/UpdateMeasurements.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
         <script> const div = d3.selectAll("div");</script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
-
-        <script src="javascript/MainScene.js"></script>
+        <script type="importmap">
+            {
+                "imports": {
+                "three": "https://unpkg.com/three@0.157.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.157.0/examples/jsm/"
+                }
+            }
+        </script>
     </head>
   
     <body style="text-align:center;">
         
         <canvas id="bg"></canvas>
 
-        <h1 style="color:green;">
+        <h1 class="title">
             Smart Garden
         </h1>
     </body>
+
+    <script src="javascript/MainScene.js" type="module"></script>
 </html>

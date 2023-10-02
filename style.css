@@ -7,3 +7,9 @@ canvas {
     top: 0;
     left: 0;
 }
+
+.title {
+    z-index: 10;
+    position: absolute;
+    color: white;
+}
