@@ -33,7 +33,7 @@ loader.load('models/pothos_plant.glb', function ( gltf ) {
 const ambientLight = new THREE.AmbientLight(0xffffff);
 
 //TODO: CHANGE COLOR DEPENDING ON WARN STATUS
-const directionalLight = new THREE.DirectionalLight( 0xe3fda8, 5 );
+export const directionalLight = new THREE.DirectionalLight( 0xe3fda8, 15 );
 directionalLight.position.setY(10);
 directionalLight.position.setX(-20);
 
