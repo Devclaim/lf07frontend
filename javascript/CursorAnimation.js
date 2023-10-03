@@ -1,11 +1,12 @@
 const coords = { x: 0, y: 0 };
 const circles = [];
+const cursorContainer = document.getElementById('cursorContainer');
 
 for (let i = 0; i < 25; i++) {
     const circle = document.createElement("div");
     circle.className = "circle";
 
-    document.body.appendChild(circle);
+    cursorContainer.appendChild(circle);
     circles.push(circle);
 }
 
@@ -22,12 +23,12 @@ window.addEventListener("mousemove", function(e){
 window.addEventListener("click", function(e){
     const wave = document.createElement("div");
     wave.className = "wave";
-    document.body.appendChild(wave);
+    cursorContainer.appendChild(wave);
 
     wave.style.top = `${e.clientY}px`;
     wave.style.left = `${e.clientX}px`;
 
-    wave.style.animation = 'wave-effect .3s linear';
+    wave.style.animation = 'wave-effect .2s linear';
     wave.onanimationend = () => wave.remove();
 });
 

@@ -63,6 +63,8 @@
             </div>
         </div>
     </body>
+
+    <div id="cursorContainer"></div>
     
     <script src="javascript/MainScene.js" type="module"></script>
     <script src="javascript/CursorAnimation.js" type="module"></script>
