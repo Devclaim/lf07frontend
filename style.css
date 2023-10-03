@@ -35,7 +35,7 @@ body {
 }
 
 .extandable {
-    width: 700px;
+    width: 600px;
     position: absolute;
     top: 15%;
     left: 40px;
@@ -56,7 +56,8 @@ body {
 }
 
 .extandable > div {
-    padding: 40px;
+    padding: 20px;
+    overflow-y: auto;
 }
 
 .measurementsBox {

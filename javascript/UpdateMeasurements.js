@@ -1,4 +1,6 @@
 import { directionalLight } from "./MainScene.js";
+import { addData } from "./DrawCharts.js";
+
 console.log("Initiate Update Measurements");
 
 let tempLow = false;
@@ -21,7 +23,7 @@ function UpdateMeasurements() {
             console.error('There was a problem with the fetch operation:', error);
         });
 
-    fetch('Execute_GetTemperatures.php')
+    fetch('Execute_GetTemperature.php')
         .then(response => response.json())
         .then(data => {
             updateTemperatureData(data);
@@ -54,7 +56,7 @@ function UpdateMeasurements() {
 function updateTemperatureData(data) {
     if(data) {
         const temperatureValue = document.querySelector("#temperatureValue");
-        const latestValue = data[data.length -1].value;
+        const latestValue = data.value;
 
         temperatureValue.textContent = latestValue;
 
@@ -73,6 +75,7 @@ function updateTemperatureData(data) {
         }
 
         updateDirectionalLight();
+        addData(data.datetime, data.value);
     }
 }
 

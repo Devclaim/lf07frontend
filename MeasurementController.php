@@ -43,18 +43,11 @@
             fclose($fileHandle);
         }
 
-        public function getTemperatures() {
-            $sql = "SELECT * FROM temperature";
+        public function getTemperature() {
+            $sql = "SELECT * FROM temperature ORDER BY datetime DESC LIMIT 1";
             $result = $this->conn->query($sql);
 
-            $data = array();
-            while ($row = $result->fetch_assoc()) {
-                $data[] = $row;
-            }
-
-            $json = json_encode($data);
-
-            header('Content-Type: application/json');
+            $json = json_encode($result->fetch_assoc());
             echo $json;
         }
 

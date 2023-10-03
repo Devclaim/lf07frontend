@@ -1,13 +1,13 @@
 const context = document.getElementById('chart').getContext('2d');
 
-const labels = ['jan', 'feb', 'march', 'april'];
 const data = {
-    labels: labels,
+    labels: [],
         datasets: [{
-            label: 'My First Dataset',
-            data: [65, 59, 80, 81, 56, 55, 40],
+            label: 'Temperatures',
+            data: [],
             fill: false,
-            borderColor: 'rgb(75, 192, 192)',
+            borderColor: "#e0ffe8",
+            color: "#e0ffe8",
             tension: 0.1
         }]
     };
@@ -17,7 +17,32 @@ const config = {
     data: data,
     options: {
         responsive: true,
+        scales: {
+            y: {
+               ticks: {
+                    color: "#e0ffe8",
+               }
+            },
+            x: {
+                ticks: {
+                    color: "#e0ffe8",
+                }
+            }
+        },
+        plugins: {
+            legend: {
+                display: false,
+            }
+        }
     }
 };
 
 const chart = new Chart(context , config)
+
+export function addData(label, newData) {
+    chart.data.labels.push(label);
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.push(newData);
+    });
+    chart.update();
+}
