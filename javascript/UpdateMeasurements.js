@@ -155,4 +155,5 @@ function updateDirectionalLight() {
     }
 }
 
+UpdateMeasurements();
 setInterval(UpdateMeasurements, 4000);
