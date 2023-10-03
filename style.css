@@ -9,7 +9,7 @@ body {
     cursor: none;
 }
 
-canvas {
+#canvas {
     position: fixed;
     top: 0;
     left: 0;
@@ -34,25 +34,29 @@ canvas {
     color: #e0ffe8;
 }
 
-button {
-    height: 60px;
-    width: 300px;
+.extandable {
+    width: 700px;
     position: absolute;
     top: 15%;
     left: 40px;
-    border-radius: 9999px;
-    background: transparent;
+    border-radius: 35px;
+    background: rgb(0,0,0,.2);
     color: #e0ffe8;
     font-family: "Urbanist";
     font-weight: 300;
     font-size: 24px;
-    border: 1px solid #e0ffe8;
     z-index: 10;
     cursor: none;
+    border: 1px solid #e0ffe8;
 }
 
-button:hover {
-    background: #5B6F39;
+.extandable > summary {
+    padding: 20px;
+    border-radius: 35px;
+}
+
+.extandable > div {
+    padding: 40px;
 }
 
 .measurementsBox {
