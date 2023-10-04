@@ -34,11 +34,26 @@ body {
     color: #e0ffe8;
 }
 
-.extandable {
-    width: 600px;
+.extandableContainer {
     position: absolute;
-    top: 15%;
+    top: 140px;
     left: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.extandableContainerRight {
+    position: absolute;
+    top: 140px;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.extandable {
+    width: 640px;
     border-radius: 35px;
     background: rgb(0,0,0,.2);
     color: #e0ffe8;
@@ -55,9 +70,25 @@ body {
     border-radius: 35px;
 }
 
-.extandable > div {
-    padding: 20px;
-    overflow-y: auto;
+.chartContainer {
+    padding: 0 20px 20px 20px;
+    width: 600px;
+    display: flex;
+}
+
+.chartYAxisBody {
+    width: 30px;
+}
+
+.chartLargeScroll {
+    width: 600px;
+    max-width: 600px;
+    overflow-x: scroll;
+}
+
+.chartContainerBody {
+    width: calc(600px - 30px);
+    height: 350px;
 }
 
 .measurementsBox {
@@ -119,3 +150,21 @@ body {
         margin: -80px;
     }
 }
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #67866f;
+    border-radius: 35px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #5B6F39;
+  }

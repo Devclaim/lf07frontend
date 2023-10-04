@@ -1,5 +1,5 @@
 import { directionalLight } from "./MainScene.js";
-import { addData } from "./DrawCharts.js";
+import { addData, tempChart, tempChartYAxis, humidChart, humidChartYAxis, waterChart, waterChartYAxis, lumChart, lumChartYAxis, tempContainer, humidContainer, waterContainer,lumContainer } from "./DrawCharts.js";
 
 console.log("Initiate Update Measurements");
 
@@ -75,14 +75,14 @@ function updateTemperatureData(data) {
         }
 
         updateDirectionalLight();
-        addData(data.datetime, data.value);
+        addData(data.datetime, data.value, tempChart, tempChartYAxis, tempContainer);
     }
 }
 
 function updateHumidityData(data) {
     if(data) {
         const humidityValue = document.querySelector("#humidityValue");
-        const latestValue = data[data.length -1].value;
+        const latestValue = data.value;
 
         humidityValue.textContent = latestValue;
 
@@ -101,13 +101,14 @@ function updateHumidityData(data) {
         }
 
         updateDirectionalLight();
+        addData(data.datetime, data.value, humidChart, humidChartYAxis, humidContainer);
     }
 }
 
 function updateWaterLevelData(data) {
     if(data) {
         const waterLevelValue = document.querySelector("#waterLevelValue");
-        const latestValue = data[data.length -1].value;
+        const latestValue = data.value;
 
         waterLevelValue.textContent = latestValue;
 
@@ -120,13 +121,14 @@ function updateWaterLevelData(data) {
         }
 
         updateDirectionalLight();
+        addData(data.datetime, data.value, waterChart, waterChartYAxis, waterContainer);
     }
 }
 
 function updateLuminosityData(data) {
     if(data) {
         const luminosity = document.querySelector("#luminosityValue");
-        const latestValue = data[data.length -1].value;
+        const latestValue = data.value;
 
         luminosity.textContent = latestValue;
 
@@ -145,6 +147,7 @@ function updateLuminosityData(data) {
         }
 
         updateDirectionalLight();
+        addData(data.datetime, data.value, lumChart, lumChartYAxis, lumContainer);
     }
 }
 

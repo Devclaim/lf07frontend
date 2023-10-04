@@ -34,8 +34,8 @@ window.addEventListener("click", function(e){
 
 function animateCircles() {
   
-  let x = coords.x;
-  let y = coords.y;
+  let x = coords.x -5;
+  let y = coords.y -5;
   
   circles.forEach(function (circle, index) {
     circle.style.left = x + "px";

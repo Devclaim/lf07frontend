@@ -52,47 +52,26 @@
         }
 
         public function getHumidity() {
-            $sql = "SELECT * FROM humidity";
+            $sql = "SELECT * FROM humidity ORDER BY datetime DESC LIMIT 1";
             $result = $this->conn->query($sql);
 
-            $data = array();
-            while ($row = $result->fetch_assoc()) {
-                $data[] = $row;
-            }
-
-            $json = json_encode($data);
-
-            header('Content-Type: application/json');
+            $json = json_encode($result->fetch_assoc());
             echo $json;
         }
 
         public function getWaterLevel() {
-            $sql = "SELECT * FROM waterLevel";
+            $sql = "SELECT * FROM waterLevel ORDER BY datetime DESC LIMIT 1";
             $result = $this->conn->query($sql);
 
-            $data = array();
-            while ($row = $result->fetch_assoc()) {
-                $data[] = $row;
-            }
-
-            $json = json_encode($data);
-
-            header('Content-Type: application/json');
+            $json = json_encode($result->fetch_assoc());
             echo $json;
         }
 
         public function getLuminosity() {
-            $sql = "SELECT * FROM luminosity";
+            $sql = "SELECT * FROM luminosity ORDER BY datetime DESC LIMIT 1";
             $result = $this->conn->query($sql);
 
-            $data = array();
-            while ($row = $result->fetch_assoc()) {
-                $data[] = $row;
-            }
-
-            $json = json_encode($data);
-
-            header('Content-Type: application/json');
+            $json = json_encode($result->fetch_assoc());
             echo $json;
         }
     }

@@ -31,14 +31,73 @@
             Smart Garden
         </h1>
         
-        <details class="extandable">
-            <summary>
-                Temperature History
-            </summary>
-            <div>
-                <canvas id="chart"></canvas>
-            </div>
-        </details>
+        <div class="extandableContainer">
+            <details class="extandable" open>
+                <summary>
+                    Temperature History
+                </summary>
+                <div class="chartContainer">
+                    <div class="chartYAxisBody">
+                        <canvas data-chart="tempChartYAxis" class="chartYAxis"></canvas>
+                    </div>
+                    <div data-chart="tempContainer" class="chartLargeScroll">
+                        <div class="chartContainerBody">
+                            <canvas data-chart="tempChartMain" class="chartMain"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <details class="extandable">
+                <summary>
+                    Humidity History
+                </summary>
+                <div class="chartContainer">
+                    <div class="chartYAxisBody">
+                        <canvas data-chart="humidChartYAxis" class="chartYAxis"></canvas>
+                    </div>
+                    <div data-chart="humidContainer" class="chartLargeScroll">
+                        <div class="chartContainerBody">
+                            <canvas data-chart="humidChartMain" class="chartMain"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        </div>
+
+        <div class="extandableContainerRight">
+            <details class="extandable" open>
+                <summary>
+                    Water Level History
+                </summary>
+                <div class="chartContainer">
+                    <div class="chartYAxisBody">
+                        <canvas data-chart="waterChartYAxis" class="chartYAxis"></canvas>
+                    </div>
+                    <div data-chart="waterContainer" class="chartLargeScroll">
+                        <div class="chartContainerBody">
+                            <canvas data-chart="waterChartMain" class="chartMain"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <details class="extandable">
+                <summary>
+                    Luminosity History
+                </summary>
+                <div class="chartContainer">
+                    <div class="chartYAxisBody">
+                        <canvas data-chart="lumChartYAxis" class="chartYAxis"></canvas>
+                    </div>
+                    <div data-chart="lumContainer" class="chartLargeScroll">
+                        <div class="chartContainerBody">
+                            <canvas data-chart="lumChartMain" class="chartMain"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        </div>
         
         <div class="measurementsBox">
             <div class="measurement">
