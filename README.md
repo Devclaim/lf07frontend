@@ -1,6 +1,6 @@
 # LF07Frontend (Kilian S. / Hakon T. / Burhan K.)
 
-## Frontend starten mit (XAMPP)
+## Frontend starten mit XAMPP
 
 1.  Git Clone
 2.  Ordner mit XAMPP öffnen
